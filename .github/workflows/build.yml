@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches: ["env/prod", "env/dev", "main"]
+  pull_request:
+    types: ["opened", "synchronize"]
+
+env: 
+  ENV_VARIABLES: ${{ github.ref == 'refs/heads/env/prod' && secrets.PROD_VARIABLES || secrets.DEV_VARIABLES }}
+
+jobs:
+  nextjs:
+    name: NextJS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.1.1
+      - uses: actions/setup-node@v3
+      - name: Create .env file from GitHub secrets
+        run: echo "$ENV_VARIABLES" > .env
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build NextJS
+        run: pnpm run build
+  storybook:
+    name: Storybook
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.1.1
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build Storybook
+        run: pnpm run sb:build

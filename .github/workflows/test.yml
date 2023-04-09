@@ -1,0 +1,51 @@
+name: Test
+
+on:
+  push:
+    branches: ["env/prod", "env/dev", "main"]
+  pull_request:
+    types: ["opened", "synchronize"]
+
+env: 
+  ENV_VARIABLES: ${{ github.ref == 'refs/heads/env/prod' && secrets.PROD_VARIABLES || secrets.DEV_VARIABLES }}
+
+jobs:
+  unit-test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.1.1
+      - uses: actions/setup-node@v3
+      - name: Create .env file from GitHub secrets
+        run: echo "$ENV_VARIABLES" > .env
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Vitest
+        run: pnpm run test:unit
+  end-to-end:
+    name: End-to-end
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.1.1
+      - uses: actions/setup-node@v3
+      - name: Create .env file from GitHub secrets
+        run: echo "$ENV_VARIABLES" > .env
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright
+        run: pnpm run test:e2e
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
