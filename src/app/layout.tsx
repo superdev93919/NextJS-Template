@@ -1,5 +1,4 @@
 import "#/lib/styles/reset.css";
-import "#/lib/styles/font.css";
 import "#/lib/styles/tailwind.css";
 import type { PropsWithChildren, ReactElement } from "react";
 import type { Metadata } from "next";
