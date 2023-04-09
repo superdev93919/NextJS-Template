@@ -1,0 +1,77 @@
+{
+  "version": "0.1.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "test:unit": "vitest --ui",
+    "test:e2e": "playwright test",
+    "sb:dev": "storybook dev -p 6006",
+    "sb:build": "storybook build",
+    "sb:start": "serve storybook-static",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.0.1",
+    "@tanstack/react-query": "^4.28.0",
+    "clsx": "^1.2.1",
+    "dayjs": "^1.11.7",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.8.0",
+    "zod": "^3.21.4",
+    "zustand": "^4.3.7"
+  },
+  "devDependencies": {
+    "@bluzzi/eslint-config": "^0.9.0",
+    "@playwright/test": "^1.32.2",
+    "@storybook/addon-essentials": "^7.0.2",
+    "@storybook/addon-interactions": "^7.0.2",
+    "@storybook/addon-links": "^7.0.2",
+    "@storybook/manager-api": "^7.0.2",
+    "@storybook/nextjs": "7.0.2",
+    "@storybook/react": "^7.0.2",
+    "@storybook/testing-library": "^0.1.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/ui": "^0.29.8",
+    "autoprefixer": "^10.4.14",
+    "dotenv": "^16.0.3",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "happy-dom": "^9.1.7",
+    "postcss": "^8.4.21",
+    "serve": "^14.2.0",
+    "sharp": "^0.32.0",
+    "storybook": "7.0.2",
+    "storybook-css-modules": "^1.0.8",
+    "tailwindcss": "^3.3.1",
+    "typescript": "5.0.3",
+    "vite": "^4.2.1",
+    "vitest": "^0.29.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@bluzzi",
+      "next/core-web-vitals"
+    ],
+    "rules": {
+      "react-hooks/exhaustive-deps": "off",
+      "react/jsx-curly-brace-presence": [
+        "error",
+        {
+          "props": "never",
+          "children": "never"
+        }
+      ],
+      "react/no-unescaped-entities": "off"
+    }
+  }
+}
