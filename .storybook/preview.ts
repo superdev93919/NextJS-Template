@@ -1,5 +1,4 @@
 import type { Preview } from "@storybook/react";
-import "../src/lib/styles/font.css";
 import "../src/lib/styles/tailwind.css";
 
 const preview: Preview = {
