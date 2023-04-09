@@ -1,0 +1,1 @@
+export { navbarPages } from "./navbar.config";
