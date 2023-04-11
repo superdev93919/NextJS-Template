@@ -42,9 +42,9 @@ They are located in our structure in the following location: `src/lib/components
 ### Sections
 Sections is part of a page, the page being devided in multiple section (example: header, about, our team,...) and contain themself some atomes or molecules.
 
-They are located in a folder of a page ([voir routing de NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
+They are located in a folder of a page ([See Routing from NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
 
 ### Pages
 Pages contain a set of section or integrate molecules & atoms for the smallest page. the Page is usually part of the layout.
 
-They are located in a folder of a page ([voir routing de NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
+They are located in a folder of a page ([See Routing from NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
