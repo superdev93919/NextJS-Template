@@ -1,23 +1,23 @@
 # NextJS Template
-A template for NextJS with TS, Tailwind, Zustand, Zod, TanStack Query, React Hook Form, Zustand, Vitest, Playwright, Storybook.
+A template for NextJS with TS, Tailwind, Zustand, Zod, TanStack Query, React Hook Form, Zustand, Vitest, Playwright, Storybook. Use it as a boilerplate to bootstrap your project! 
 
 ## Commandes
-> **Warning**
-> L'utilisation du package manager PNPM est obligatoire, vous pouvez l'installer via la commande `npm i -g pnpm` puis suivre le reste de la documentation.
+  **Warnings**
+  The usage of this package required `PNPM` (requirement), you can install it using the `npn i -g pnpm` then follow the instruction.
 
-[Voir les commandes](./docs/commands.md)
+  [Commands List](./docs/commands.md)
 
-## Stack technique
-Les différentes technologies utilisées dans ce projet, avec pour chacune des liens vers leur documentation ou des tutoriels utiles.
+## Technical Stack
+Here is the list of the various stack used in this project, please see the documentation link below
 
-[Voir la stack technique](./docs/stack.md)
+[Technical Stack](./docs/stack.md)
 
 ## Architecture
-[Organisation des dossiers](./docs/folders.md)  
-[Nommination des fichiers](./docs/file-name.md)
+[Tree files](./docs/folders.md)
+[Naming convention of files](./docs/file-name.md)
 
-## Variables d'environnement
-Les variables d'envionnement sont stockés dans un fichier `.env` à la racine du projet (que vous devez créer vous même).
+## Env Variable
+The env variables are stored in the `.env` at the root folder (You need to create it yourself)
 
 ```env
 NEXT_PUBLIC_API_URL="http://localhost:4000"

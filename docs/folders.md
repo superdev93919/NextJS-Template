@@ -1,6 +1,6 @@
 [BACK TO README](../README.md)
 
-## Organisation des dossiers
+## Folder structure
 - **public/** - assets (png, font, etc)
 - **test/** tests end-to-end
 - **src/**
@@ -12,37 +12,39 @@
       - **providers/**
       - **layouts/**
     - **hooks/** - hooks React
-    - **api/** - support de l'API généré automatiquement
-    - **styles/** - les styles principaux
-    - **utils/** - fichiers utilitaires
-    - **configs/** - configurations
+    - **api/** - support of the API generated automatically
+    - **styles/** - Main styles
+    - **utils/** - Utility files
+    - **configs/** - config
     - **stores/** - stores Zustand
-- **.storybook/** - configuration Storybook
+- **.storybook/** - StoryBook Configuration
 
 ## Atomic Design
-Les composants sont organisés en suivant la méthodologie "Atomic Design", cette méthodologie sépare les composants de notre site en 5 parties :
+The template used Atomic design pattern, this method split the website in 5 differents component:
 
-### Atomes
-Ce sont les éléments de base qui composent notre design système, tels que les boutons, les texts, les champs de formulaire, etc. 
+![atomic_design](./_assets/atomic_design.png)
 
-Ils sont stocké dans le dossier `src/lib/components/atoms/`.
+### Atomic
+Atom are the base componenent of the design system, such as: Button, text, labels, forms etc... 
 
-### Molécules 
-Ce sont généralement des groupes d'atomes qui fonctionnent ensemble pour remplir une fonction particulière (tels qu'un champ de recherche avec un bouton de recherche) ou encore des composants plus complexe qui ne rentre pas dans la catégorie des composants atomiques. 
+They are located in our structure in the following location: `src/lib/components/atoms/`.
 
-Ils sont stocké dans le dossier `src/lib/components/molecules/`.
+### Molecules
+This is generally a groupes of atomes that work together to handle a specific task (such as a form with the search button ) or having a componet more complex that doesn't fit well in an atomic component. 
+
+They are located in our structure in the following location: `src/lib/components/molecules/`.
 
 ### Layouts
-Ce sont des composants qui vont englober et structurer le contenu d'une page, par exemple une navbar, une sidebar, un app-shell, un panel, etc
+Layouts is a component that usually include the content of a page, for example a navbar, sidebar, app-shell, panel etc...
 
-Ils sont stocké dans le dossier `src/lib/components/layouts/`.
+They are located in our structure in the following location: `src/lib/components/layouts/`.
 
 ### Sections
-Une page est divisé en plusieurs sections (par exemple : header, about, our team...) qui contiennent eux même des atomes et des molécules.
+Sections is part of a page, the page being devided in multiple section (example: header, about, our team,...) and contain themself some atomes or molecules.
 
-Ils sont stocké dans le dossier d'une page ([voir routing de NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
+They are located in a folder of a page ([voir routing de NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
 
 ### Pages
-Les pages contiennent un ensemble de section ou alors directement des molécules et des atoms pour les plus petites pages. Une page est généralement englobée dans un layout.
+Pages contain a set of section or integrate molecules & atoms for the smallest page. the Page is usually part of the layout.
 
-Ils sont stocké dans le dossier d'une page ([voir routing de NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
+They are located in a folder of a page ([voir routing de NextJS](https://beta.nextjs.org/docs/routing/fundamentals)).
